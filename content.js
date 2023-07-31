@@ -1,7 +1,7 @@
 function copyToClipboard() {
     const title = document.title;
     const url = window.location.href;
-    const text = `${title}\n${url}`;
+    const text = `[${title}](${url})`;
     navigator.clipboard.writeText(text).then(() => {
       // Send a message to the background script indicating that the copy operation is complete
       chrome.runtime.sendMessage({ type: 'copyComplete' });
